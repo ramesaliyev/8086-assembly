@@ -47,3 +47,7 @@ MOV [200H], AX ; word
 ;[DSx10H+201H] <- ABH
 MOV [204H], AH ; byte
 ;[DSx10H+204H] <- ABH
+
+MOV WORD PTR [210H], 5678H
+MOV AX, [210H]; word, AX <- 5678H
+MOV BL, [210H]; byte, BL <- 78H
