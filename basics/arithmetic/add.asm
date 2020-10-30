@@ -33,3 +33,9 @@ ADD WORD PTR [190H], 1H ; 190H = 00H, 191H=91H
 MOV AH, 5H
 MOV AL, 3H
 ADD AH, AL
+
+; subtraction example
+MOV AX, 5H
+MOV BX, 3H
+NEG BX     ; -3H
+ADD AX, BX ; 5H + (-3H)
