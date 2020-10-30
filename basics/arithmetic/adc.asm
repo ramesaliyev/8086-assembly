@@ -1,3 +1,4 @@
+; has same arguments as ADD
 ; 32bit addition example
 
 ; A = 1010 FFFFH

@@ -1,0 +1,19 @@
+; reg
+MOV AX, 5
+DEC AX
+                               
+MOV CX, 0H
+DEC CX ; CX -> 0FFFFH, SF=PF=AF=1
+                                 
+MOV BL, 0H
+DEC BL ; BL -> 0FFH, SF=PF=AF=1
+
+; mem PTR REQUIRED
+MOV BYTE PTR [100H], 10H
+DEC BYTE PTR [100H] ; 0FH
+
+MOV WORD PTR [110H], 1100H
+MOV WORD PTR [120H], 1100H
+
+DEC WORD PTR [110H] ; 111H -> 10H, 110H -> FFH
+DEC BYTE PTR [120H] ; 121H -> 11H, 120H -> FFH 
