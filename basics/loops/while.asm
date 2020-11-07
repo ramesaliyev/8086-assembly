@@ -1,0 +1,12 @@
+XOR AX, AX
+MOV SI, 1
+
+L2:
+CMP SI, 10
+JA L1
+ADD AX, SI
+ADD SI, 2   
+JMP L2
+  
+L1:
+MOV BX, 1

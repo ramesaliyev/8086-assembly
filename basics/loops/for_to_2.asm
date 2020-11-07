@@ -1,0 +1,8 @@
+XOR AX, AX
+MOV CX, 10
+
+L1:
+ADD AX, CX
+LOOP L1
+
+MOV BX, 1

@@ -1,0 +1,20 @@
+XOR AX, AX
+XOR SI, SI
+MOV CX, 4 
+
+outer:
+PUSH CX
+MOV DI, 2
+MOV CX, 3
+
+ inner:
+ ADD AX, SI
+ ADD AX, DI
+ INC DI
+ LOOP inner
+
+POP CX
+INC SI
+LOOP outer
+
+MOV BX, 1
