@@ -1,0 +1,1 @@
+Exercises of Low Level Programming with 8086 Assembly Lecture, implemented with [Emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) and [DOSBox](https://www.dosbox.com/).
