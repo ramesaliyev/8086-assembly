@@ -8,12 +8,14 @@ Exercises of Low Level Programming with 8086 Assembly Lecture, implemented with 
 - Extract files of `dosbox_bin.zip` into `C:\dosbox\bin`
 - Open `DOSBox <version> Options` and add following configuration end of file;
 
-    [autoexec]
-    mount c c:\dosbox
-    mount b c:\dosbox\bin
-    mount d c:\Users\creat\Documents\GitHub\8086-assembly
-    d:
-    cd exe
+```
+[autoexec]
+mount c c:\dosbox
+mount b c:\dosbox\bin
+mount d c:\Users\creat\Documents\GitHub\8086-assembly
+d:
+cd exe
+```
 
 ## Compile
 Inside DOSBox;
