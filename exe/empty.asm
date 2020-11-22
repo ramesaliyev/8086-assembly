@@ -4,10 +4,6 @@ STACKSG ENDS
 
 DATASG SEGMENT PARA 'DATA'
     ; Variable definitions.
-    USER DB ?
-    AGE  DB ?
-    LIST DW 1,2,3,4
-    LSIZE DW 4
 DATASG ENDS
 
 CODESG SEGMENT PARA 'CODE'
