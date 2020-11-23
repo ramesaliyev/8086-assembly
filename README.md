@@ -2,34 +2,48 @@ Exercises of Low Level Programming with 8086 Assembly Lecture, implemented with 
 
 # DOSBox
 
-## Installation
+## Installation Windows
 
 - Download and install [DOSBox](https://www.dosbox.com/) under `C:\dosbox`
 - Extract files of `dosbox_bin.zip` into `C:\dosbox\bin`
-- Open `DOSBox <version> Options` and add following configuration end of file;
+- Open configuration file `C:\dosbox\DOSBox <version> Options` and add following configurations at the end of file;
 
-```
-[autoexec]
-mount c c:\dosbox
-mount b c:\dosbox\bin
-mount d c:\Users\creat\Documents\GitHub\8086-assembly
-d:
-cd exe
-```
+*Change paths according to your setup:*
+
+    [autoexec]
+    mount c c:\dosbox
+    mount b c:\dosbox\bin
+    mount d c:\Users\creat\Documents\GitHub\8086-assembly
+    d:
+    cd exe
+
+## Installation macOS
+
+- Download and install [DOSBox](https://www.dosbox.com/) under `Applications`
+- Extract files of `dosbox_bin.zip` into `~/dosbox`
+- Open configuration file `~/Library/Preferences/DOSBox <version> Preferences` and add following configurations at the end of file;
+
+*Change paths according to your setup:*
+
+    [autoexec]
+    mount b ~/dosbox
+    mount d ~/Projects/Personal/8086-assembly
+    d:
+    cd exe
 
 ## Compile
 Inside DOSBox;
 
     // this will create lst file
-    c:\bin\masm.exe test.asm
+    b:\masm.exe test.asm
     
     // this will create .exe from .obj
-    c:\bin\link.exe test.obj
+    b:\link.exe test.obj
 
 ## Debug
 Inside DOSBox;
 
-    c:\bin\debug.exe test.exe
+    b:\debug.exe test.exe
 
     -r    show registers, flags and next step
     -t    run single step
@@ -41,7 +55,7 @@ Inside DOSBox;
 We can also run debugger without input exe.
 Then debugger will allocate a DS for us.
 
-    c:\bin\debug.exe
+    b:\debug.exe
     
     -a    start typing assembly (Type ENTER to exit)
     -u    unassemble
