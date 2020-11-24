@@ -3,7 +3,9 @@ STACKSG SEGMENT PARA STACK 'STACK'
 STACKSG ENDS
 
 DATASG SEGMENT PARA 'DATA'
-    ; Variable definitions.
+    ARR DB 0, 1, 3, 7, 15, 31, 63, 127
+    ONE DB 8 DUP (0}
+    LEN DW 8
 DATASG ENDS
 
 CODESG SEGMENT PARA 'CODE'
@@ -21,7 +23,22 @@ CODESG SEGMENT PARA 'CODE'
         MOV DS, AX
         
         ; our code
-        ; ...
+        MOV CX, LEN
+        MOV SI, 0
+     L1:
+        PUSH CX
+        MOV CX, 8
+        XOR AX, AX
+        MOV AH, ARR[SI]
+     L2:       
+        RCR AH, 1
+        ADC AL, 0
+        LOOP L2
+        
+        MOV ONE[SI], AL              
+        INC SI
+        POP CX
+        LOOP L1
         
         ; return
         RETF
