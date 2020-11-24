@@ -72,7 +72,7 @@ CODESG SEGMENT PARA 'CODE'
             ; sum is odd
             MOV DI, GROUP2I
             MOV GROUP2[DI], AX
-            ADD GROUP1I, 2
+            ADD GROUP2I, 2
           JMP NEXT
           ODD_SUMISEVEN:
             ; sum is even
@@ -89,13 +89,13 @@ CODESG SEGMENT PARA 'CODE'
             ; sum is odd
             MOV DI, GROUP4I
             MOV GROUP4[DI], AX
-            ADD GROUP1I, 2
+            ADD GROUP4I, 2
           JMP NEXT
           EVEN_SUMISEVEN:
             ; sum is even
             MOV DI, GROUP3I
             MOV GROUP3[DI], AX
-            ADD GROUP1I, 2
+            ADD GROUP3I, 2
 
    NEXT:
         ADD SI, 2
