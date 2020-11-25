@@ -3,9 +3,10 @@ STACKSG SEGMENT PARA STACK 'STACK'
 STACKSG ENDS
 
 DATASG SEGMENT PARA 'DATA'
-    ARR DB 123, 12, 13, 5, 45, 61, 31, 67, 99, 117, 17, 89, 23, 93, 127, 11
-    LEN DB 16
-DATASG ENDS
+    STUDENTS DW 107,102,108,106,105,104,101,103
+    SCORES   DB 25,74,13,37,42,55,87,63
+    LEN      DB 8
+DATASG ENDS 
 
 CODESG SEGMENT PARA 'CODE'
     ASSUME CS:CODESG, DS:DATASG, SS:STACKSG
@@ -22,29 +23,36 @@ CODESG SEGMENT PARA 'CODE'
         MOV DS, AX
         
         ; our code
-        XOR DI, DI
+        XOR DX, DX
         XOR CX, CX
         MOV CL, LEN
         DEC CL
         MOV BX, CX
+        MOV DL, 0
   OUTER:
         PUSH CX
         MOV SI, 0
+        MOV DI, 0
         MOV CX, BX
-        SUB CX, DI
-  
+        SUB CL, DL
+        
   INNER:
         XOR AX, AX
-        MOV AL, ARR[SI]
-        CMP AL, ARR[SI + 1]
-        JNA NEXT
-        XCHG AL, ARR[SI + 1]
-        MOV ARR[SI], AL
-   NEXT:
+        MOV AL, SCORES[SI]
+        CMP AL, SCORES[SI+1]
+        JNB CONT
+        XCHG AL, SCORES[SI+1]
+        MOV SCORES[SI], AL
+        MOV AX, STUDENTS[DI]
+        XCHG AX, STUDENTS[DI+2]
+        MOV STUDENTS[DI], AX
+        
+   CONT:    
         INC SI
-        LOOP INNER
-   
-        INC DI
+        ADD DI, 2
+        LOOP INNER    
+        
+        INC DL
         POP CX
         LOOP OUTER
         
