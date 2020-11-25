@@ -1,5 +1,7 @@
 Exercises of Low Level Programming with 8086 Assembly Lecture, implemented with [Emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) and [DOSBox](https://www.dosbox.com/).
 
+In general, Emu8086 is easier to use, write code and test program. For macOS, since it does not have macOS support, [Crossover](https://www.codeweavers.com/crossover) or directly [Wine](https://www.winehq.org/) could be used. But sometimes Emu8086 may not work properly since it just and emulator, remember to check final program in DOSBox.
+
 # DOSBox
 
 ## Installation Windows
