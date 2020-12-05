@@ -16,6 +16,8 @@ In general, Emu8086 is easier to use, write code and test program. For macOS, si
     mount c c:\dosbox
     mount b c:\dosbox\bin
     mount d c:\Users\creat\Documents\GitHub\8086-assembly
+    PATH=z:\;c:\;b:\;d:\;
+
     d:
     cd exe
 
@@ -30,6 +32,8 @@ In general, Emu8086 is easier to use, write code and test program. For macOS, si
     [autoexec]
     mount b ~/dosbox
     mount d ~/Projects/Personal/8086-assembly
+    PATH=z:\;b:\;d:\;
+
     d:
     cd exe
 
@@ -37,15 +41,15 @@ In general, Emu8086 is easier to use, write code and test program. For macOS, si
 Inside DOSBox;
 
     // this will create lst file
-    b:\masm.exe test.asm
+    masm test.asm
     
     // this will create .exe from .obj
-    b:\link.exe test.obj
+    link test.obj
 
 ## Debug
 Inside DOSBox;
 
-    b:\debug.exe test.exe
+    debug test.exe
 
     -r    show registers, flags and next step
     -t    run single step
@@ -57,7 +61,7 @@ Inside DOSBox;
 We can also run debugger without input exe.
 Then debugger will allocate a DS for us.
 
-    b:\debug.exe
+    debug
     
     -a    start typing assembly (Type ENTER to exit)
     -u    unassemble
