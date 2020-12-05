@@ -40,11 +40,15 @@ In general, Emu8086 is easier to use, write code and test program. For macOS, si
 ## Compile
 Inside DOSBox;
 
-    // this will create lst file
+    // this will create .obj file from .asm (and .lst if you want)
     masm test.asm
     
     // this will create .exe from .obj
     link test.obj
+
+    // if program is in type of com
+    // this will convert .exe to .com
+    exe2com test.exe
 
 ## Debug
 Inside DOSBox;

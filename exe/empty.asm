@@ -3,7 +3,7 @@ STACKSG SEGMENT PARA STACK 'STACK'
 STACKSG ENDS
 
 DATASG SEGMENT PARA 'DATA'
-    ; Variable definitions.
+    ; variable definitions.
 DATASG ENDS
 
 CODESG SEGMENT PARA 'CODE'
