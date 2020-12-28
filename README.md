@@ -43,8 +43,11 @@ Inside DOSBox;
     // this will create .obj file from .asm (and .lst if you want)
     masm test.asm
     
-    // this will create .exe from .obj
+    // this will create .exe from .obj (and .map if you want)
     link test.obj
+
+    // linking multiple .obj files;
+    link test.obj + test2.obj
 
     // if program is in type of com
     // this will convert .exe to .com
@@ -61,6 +64,8 @@ Inside DOSBox;
     -g cs:1e
     -d    dump memory 
     -d ds:0
+    -u    unassembly
+    -u cs:1e
 
 We can also run debugger without input exe.
 Then debugger will allocate a DS for us.
