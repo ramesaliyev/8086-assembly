@@ -66,6 +66,9 @@ Inside DOSBox;
     -d ds:0
     -u    unassembly
     -u cs:1e
+    -e    enter data into memory
+    -e 100 8B 07
+    -u 100 (see the assembly code)
 
 We can also run debugger without input exe.
 Then debugger will allocate a DS for us.
