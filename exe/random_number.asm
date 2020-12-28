@@ -27,14 +27,16 @@ CODESG SEGMENT PARA 'CODE'
         ; get seed
         MOV BX, CS:[23]
         MOV SEED, BX
-        MOV SEED, 15
+        ;MOV SEED, 63426 ;63
+        ;MOV SEED, 17    ;175
+        ;MOV SEED, 15    ;72
+        ;MOV SEED, 25    ;110
+        ;MOV SEED, 29    ;89
         
     WHL:
         ; exit if random number between 0-255
-        CMP RANDOM, 0
-        JL INIT
         CMP RANDOM, 255
-        JG INIT
+        JA INIT
         JMP FOUND 
          
    INIT:
@@ -48,10 +50,10 @@ CODESG SEGMENT PARA 'CODE'
         ; calculate next random number
         XOR DX, DX
         MOV AX, RANDOM
-        IMUL WORD PTR a
+        MUL WORD PTR a
         ADD AX, c
         ADC DX, 0
-        IDIV WORD PTR m
+        DIV WORD PTR m
         MOV RANDOM, DX         
                 
         JMP WHL    
