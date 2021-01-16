@@ -25,10 +25,10 @@ CODESG SEGMENT PARA 'CODE'
         MOV DS, AX
         
         ; our code
-        MOV AX, A
-        MOV DX, B
+        PUSH A
+        PUSH B
         CALL GCD_PROC
-        MOV GCD, AX ; response of GCD_PROC
+        POP GCD; response of GCD_PROC
 
         ; return
         RETF
