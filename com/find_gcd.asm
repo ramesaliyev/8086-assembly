@@ -20,7 +20,7 @@ CODESG SEGMENT PARA 'CODE'
         MOV CX, LEN
      L1:
         MOV AX, X[SI]
-        MOV DX, Y[SI}
+        MOV DX, Y[SI]
         ; make X>Y, AX > DX
         CMP AX, DX
         JAE L2
