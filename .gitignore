@@ -4,3 +4,9 @@
 *.obj
 *.lst
 *.map
+
+# Stupid VS
+**/Debug
+**/Release
+**/x64
+**/.vs
